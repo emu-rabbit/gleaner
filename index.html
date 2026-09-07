@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="拾起留在舊站的筆記與收藏，為冷凍兔肉的工坊與秘笈保存搬家備份。">
+    <meta name="theme-color" content="#e8f5e9">
+    <title>拾穗人的委託</title>
+    <link rel="stylesheet" href="./src/style.css">
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <div class="toolbar">
+        <label for="language" id="language-label">語言</label>
+        <select id="language" aria-labelledby="language-label">
+          <option value="tw">繁體中文</option>
+          <option value="cn">简体中文</option>
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+        <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="深色模式">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.5A9 9 0 0 1 8.5 4 9 9 0 1 0 20 15.5Z"/></svg>
+        </button>
+      </div>
+      <main>
+        <header class="intro">
+          <svg class="sprig" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M11 33 29 7M18 23C8 22 10 15 10 15s9 0 8 8Zm5-7C15 15 17 8 17 8s8 1 6 8Zm-7 12c7 5 12-2 12-2s-7-4-12 2Zm7-10c8 3 11-4 11-4s-8-2-11 4Z"/></svg>
+          <h1 id="title">拾穗人的委託</h1>
+          <p id="intro">拾起留在舊站的筆記與收藏，帶往下一段旅程。</p>
+          <p id="instructions" class="instructions">請使用曾經開啟工坊或秘笈的瀏覽器，下載下方的 JSON 備份檔，留待新站開放搬家匯入後使用。</p>
+        </header>
+        <p id="environment" class="notice" hidden></p>
+        <div class="cards">
+          <section class="card" aria-labelledby="workshop-title" data-project="workshop">
+            <header class="card-heading"><img class="icon" src="./src/assets/workshop.png" width="40" height="40" alt=""><h2 id="workshop-title">冷凍兔肉的工坊</h2></header>
+            <dl class="stats"></dl>
+            <p class="state" role="status"></p>
+            <button class="download" type="button" disabled></button>
+          </section>
+          <section class="card" aria-labelledby="tome-title" data-project="tome">
+            <header class="card-heading"><img class="icon" src="./src/assets/tome.png" width="40" height="40" alt=""><h2 id="tome-title">冷凍兔肉的秘笈</h2></header>
+            <dl class="stats"></dl>
+            <p class="state" role="status"></p>
+            <button class="download" type="button" disabled></button>
+          </section>
+        </div>
+        <p id="privacy" class="privacy">資料只在此瀏覽器讀取，不會上傳；下載也不會刪除舊站資料。</p>
+        <noscript><p class="notice">請啟用 JavaScript 以讀取與下載資料。 / Enable JavaScript to read and download your data.</p></noscript>
+      </main>
+    </div>
+  </body>
+</html>
