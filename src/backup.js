@@ -19,7 +19,7 @@ export const projects = {
     tome('gear-profiles', 'gear', 'array'),
     ...['lang', 'library-display-mode', 'experiment-database-display-mode', 'frontier-studies-display-mode'].map(key => tome(key, 'settings', 'string')),
     tome('dark-mode', 'settings', 'boolean'),
-    ...['macro-settings', 'solver-settings', 'frontier-settings', 'favorite-item-filters', 'solver-stats', 'selected-food', 'node-bonuses', 'active-item', 'user-stats'].map(key => tome(key, 'settings')),
+    ...['macro-settings', 'solver-settings', 'frontier-settings', 'favorite-item-filters', 'solver-stats', 'selected-food', 'node-bonuses', 'user-stats'].map(key => tome(key, 'settings')),
   ],
 };
 

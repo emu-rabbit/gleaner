@@ -39,8 +39,19 @@ test('tome includes each collection, legacy gear data, and saved preferences ind
   assert.equal(snapshot.counts.library, 2);
   assert.equal(snapshot.counts.experiments, 2);
   assert.equal(snapshot.counts.studies, 2);
-  assert.equal(snapshot.counts.settings, 14);
+  assert.equal(snapshot.counts.settings, 13);
   assert.deepEqual(createBackup('tome', snapshot, SOURCE_ORIGIN).data, values);
+});
+
+test('active item is never read or exported and cannot invalidate saved settings', () => {
+  const snapshot = readProject({ getItem(key) {
+    assert.notEqual(key, 'frozen-rabbit-tome-active-item');
+    return key === 'frozen-rabbit-tome-lang' ? 'tw' : null;
+  } }, 'tome');
+  assert.equal(snapshot.counts.settings, 1);
+  assert.deepEqual(snapshot.invalidKeys, []);
+  assert.deepEqual(createBackup('tome', snapshot, SOURCE_ORIGIN).data, { 'frozen-rabbit-tome-lang': 'tw' });
+  assert.equal(readProject(storage({ 'frozen-rabbit-tome-active-item': '[object Object]' }), 'tome').status, 'empty');
 });
 
 test('empty origin does not invent defaults or offer an empty backup', () => {

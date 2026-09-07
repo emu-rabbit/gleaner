@@ -32,11 +32,13 @@
 | 工坊 | `favorites-data`、`notes` | 各陣列長度 |
 | 工坊 | 語系、市場區域／資料中心／策略、深色模式 | 實際存在的 5 種設定 key 數量 |
 | 秘笈 | `favorite-items`、`library`、`experiments`、`frontier-studies`、`gear-profiles` | 各陣列長度 |
-| 秘笈 | 語系、3 種顯示模式、深色模式、巨集／求解器／前瞻設定、收藏篩選、求解器能力值、食物、節點加成、目前物品、舊版 `user-stats` | 實際存在的 14 種設定 key 數量 |
+| 秘笈 | 語系、3 種顯示模式、深色模式、巨集／求解器／前瞻設定、收藏篩選、求解器能力值、食物、節點加成、舊版 `user-stats` | 實際存在的 13 種設定 key 數量 |
 
 工坊 key 前綴是 `frozen-rabbit-`，秘笈是 `frozen-rabbit-tome-`。設定數不是物件內的欄位數。資料陣列只做基本外形檢查，不宣稱每筆內容符合新站 schema。舊版 `user-stats` 原樣保存，留待匯入器按新版 gear migration 規則處理。
 
 不收錄追蹤同意、debug 設定、首次使用旗標、未知 key、其他專案資料或可重新下載的遊戲快取。資料不以 prefix 掃描、不上傳、不修改、不刪除。
+
+秘笈的 `frozen-rabbit-tome-active-item` 是求解台目前選中的物品，不納入備份或設定計數，也不讀取或刪除原值。使用者到新站重新選擇物品即可。早期 v1 備份可能包含此 key；後續匯入器應略過，不還原。
 
 ## 異常行為
 
